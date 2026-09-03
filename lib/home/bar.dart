@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:for_you_app/cart/cart.dart';
 void main(){
   runApp(MyApp());
 }
@@ -23,22 +24,27 @@ class MyApp extends StatelessWidget {
                       Column(
                         children: [
                           Text("Welcome Back",style:TextStyle(color: Color(0xff6a6a6a),fontSize:15),),
-                          Text("User Name",style:TextStyle(color:Colors.black,fontWeight:FontWeight.bold,fontSize: 15),)
+                          Text("user name",style:TextStyle(color:Colors.black,fontWeight:FontWeight.bold,fontSize: 15),)
                         ],
                       ),
                       SizedBox(width:142,),
                       Container(
                           width:50,height:50,
                           decoration:BoxDecoration(shape:BoxShape.circle,color:Color(0xffd4edff),border:Border.all(color: Color(0xff89b9f8),width:1)),
-                          child:IconButton(onPressed:(){},icon:Icon(Icons.shopping_cart,color:Color(0xff89b9f8),))
+                          child:IconButton(onPressed:(){Navigator.push(context,MaterialPageRoute(builder: (context) => Cart()));},icon:Icon(Icons.shopping_cart,color:Color(0xff89b9f8),))
                       ),
                     ]
                 )),
-            body: Container(
-              width:double.infinity,height:double.infinity,
-              decoration:BoxDecoration(image: DecorationImage(image: AssetImage("assets/background.png"),
-                repeat:ImageRepeat.repeat,
-              )),
+            body: Column(
+              children: [
+                Container(
+                  width:double.infinity,height:double.infinity,
+                  decoration:BoxDecoration(image: DecorationImage(image: AssetImage("assets/background.png"),
+                    repeat:ImageRepeat.repeat,
+                  )),
+                ),
+
+              ],
             )
         ));
   }
