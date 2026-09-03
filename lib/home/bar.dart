@@ -35,17 +35,51 @@ class MyApp extends StatelessWidget {
                       ),
                     ]
                 )),
-            body: Column(
-              children: [
-                Container(
-                  width:double.infinity,height:double.infinity,
-                  decoration:BoxDecoration(image: DecorationImage(image: AssetImage("assets/background.png"),
-                    repeat:ImageRepeat.repeat,
-                  )),
+          body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/background.png"),
+              repeat: ImageRepeat.repeat,
+            ),
+          ),
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              Container(
+                width: 350,
+                height: 45,
+                decoration: BoxDecoration(
+                  color: Color(0x30ffffff),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
+                  ),
+                  border: Border.all(
+                    width: 1,
+                    color: Color(0xff6a6a6a),
+                  ),
                 ),
-
-              ],
-            )
+                child: Row(
+                  children: [
+                    SizedBox(width: 15),
+                    Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "What's on your list?",
+                      style: TextStyle(
+                        color: Color(0xff6a6a6a),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
         ));
   }
 }
